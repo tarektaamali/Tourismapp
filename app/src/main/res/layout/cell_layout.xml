@@ -4,7 +4,8 @@
     android:background="#FFFFFF"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginRight="3dp">
+    android:layout_margin="3dp"
+    >
     <ImageView
         android:id="@+id/img"
         android:adjustViewBounds="true"

@@ -85,11 +85,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> implem
                     ArrayList<CreateList> filteredList = new ArrayList<>();
 
                     for (CreateList androidVersion : galleryList) {
-                        do{
-                        if (androidVersion.getImage_title().toLowerCase().contains(charString)) {
+
+                        if (androidVersion.getImage_title().toLowerCase().contains(charString)||androidVersion.getImage_title().toUpperCase().contains(charString)) {
 
                             filteredList.add(androidVersion);
-                        }}while (charString.isEmpty());
+                        }
                     }
 
                     galleryList = filteredList;
