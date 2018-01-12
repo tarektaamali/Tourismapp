@@ -1,4 +1,4 @@
-package com.mpdam.info.myapplication;
+package com.mpdam.info.myapplication.adapter;
 
 /**
  * Created by Info on 12/3/2017.
@@ -6,7 +6,6 @@ package com.mpdam.info.myapplication;
 
 import android.content.Context;
 import android.content.Intent;
-import android.sax.StartElementListener;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,12 +17,18 @@ import android.widget.TextView;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
+import com.mpdam.info.myapplication.R;
+import com.mpdam.info.myapplication.ui.Main2Activity;
+import com.mpdam.info.myapplication.ui.Regiondetail;
+import com.mpdam.info.myapplication.model.CreateList;
+
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> implements Filterable  {
     private ArrayList<CreateList> galleryList;
     private Context context;
     private ArrayList<CreateList> mFilteredList;
+    int r;
 
     public MyAdapter(Context context, ArrayList<CreateList> galleryList) {
         this.galleryList = galleryList;
@@ -51,9 +56,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> implem
         viewHolder.img.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Toast.makeText(context,viewHolder.title.getText(),Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(v.getContext(), Regiondetail.class);
+                Intent intent = new Intent(v.getContext(), Main2Activity.class);
+
+                intent.putExtra("a",viewHolder.title.getText());
+            //    intent.putExtra("b",viewHolder.img.getId());
                 v.getContext().startActivity(intent);
+
 
 
 

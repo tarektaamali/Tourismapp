@@ -1,4 +1,4 @@
-package com.mpdam.info.myapplication;
+package com.mpdam.info.myapplication.model;
 
 /**
  * Created by Info on 12/3/2017.
@@ -9,6 +9,7 @@ public class CreateList {
 
     private String image_title;
     private Integer image_id;
+
 
     public String getImage_title() {
         return image_title;
