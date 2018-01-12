@@ -6,23 +6,37 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mpdam.info.myapplication.R;
+import com.mpdam.info.myapplication.Retrofit.api.RetrofitObjectAPI;
+import com.mpdam.info.myapplication.model.RegionList;
+
+import java.util.ArrayList;
+
+import retrofit.Call;
+import retrofit.Callback;
+import retrofit.GsonConverterFactory;
+import retrofit.Response;
+import retrofit.Retrofit;
 
 import static com.mpdam.info.myapplication.ui.MainActivity.image_ids;
 import static com.mpdam.info.myapplication.ui.MainActivity.image_titles;
+import static com.mpdam.info.myapplication.ui.Utils.IMGS;
+
 
 public class Main2Activity extends AppCompatActivity {
-    TextView tx ,contentdesc ;
+    TextView tx ,contentdesc,histodesc,specialitedesc ;
     private CollapsingToolbarLayout collapsingToolbarLayout = null;
     ImageView img;
-
-
+   // public   static String IMGS[];
+    String url = "http://anproip.co.nf/";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,26 +55,78 @@ public class Main2Activity extends AppCompatActivity {
 
         }
         contentdesc=(TextView)findViewById(R.id.desContent);
+        histodesc=(TextView)findViewById(R.id.histoContent);
+        specialitedesc=(TextView)findViewById(R.id.specialiteContent);
+
         tx.setText("Description");
-        contentdesc.setText("beja est un Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet");
+      //  contentdesc.setText("beja est un Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-         toolbar.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 Intent i=new Intent(getApplicationContext(),Main3Activity.class);
-                 startActivity(i);
-             }
-         });
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         collapsingToolbarLayout.setTitle(value);
         img.setImageResource(image_ids[x]);
+        getRetrofitObject();
         //   dynamicToolbarColor();
-
        // toolbarTextAppernce();
+    }
+
+    void getRetrofitObject() {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(url)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        RetrofitObjectAPI service = retrofit.create(RetrofitObjectAPI.class);
+//id =x
+        final Call<RegionList> call = service.getStudentDetails(/*x*/);
+
+
+        call.enqueue(new Callback<RegionList>() {
+            @Override
+            public void onResponse(Response<RegionList> response, Retrofit retrofit) {
+
+                try {
+                    if (response.body().getImg().size()>0) {
+                        for (int i =0; i < response.body().getImg().size(); i++) {
+                          //  Toast.makeText(getApplicationContext(),response.body().getImg().size()+"",Toast.LENGTH_LONG).show();
+                            IMGS[i]=response.body().getImg().get(i).toString();
+
+
+                        }}
+
+                    //     text_id.setText("ReggionId  :  " + response.body().getRegion().getId());
+                    //nameRegion.setText("RegionName  :  " + response.body().getRegion().getNom());
+                    contentdesc.setText(response.body().getRegion().getDescription());
+                   histodesc.setText(response.body().getRegion().getHistoire());
+            specialitedesc.setText(response.body().getRegion().getSpecialite());
+                    String[] result;
+
+                    //    a=response.body().getImg().get(0).toString();
+                 /*   Glide.with(getApplicationContext())
+                            .load((a))
+                            .into(textViewImageUrl);*/
+                } catch (Exception e) {
+                    Log.d("onResponse", "There is an error");
+                    e.printStackTrace();
+                }
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .add(R.id.content95, RecyclerViewFragment.newInstance())
+                        .commit();
+
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+                Log.d("onFailure", t.toString());
+            }
+        });
+
+
     }
 
 
