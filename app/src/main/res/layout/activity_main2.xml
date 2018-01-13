@@ -219,15 +219,39 @@
                             android:id="@+id/map"
                             android:name="com.google.android.gms.maps.SupportMapFragment"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="200dp"
                              />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="right" >
 
+                            <TextView
+                                android:id="@+id/viewmap"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="VIEW"
+                                android:textColor="#ffc125"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/navigatemap"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:text="NAVIGATE"
+                                android:textColor="#ffc125"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
 
             </LinearLayout>
 
-
+s
         </android.support.v4.widget.NestedScrollView>
     </FrameLayout>
 </android.support.design.widget.CoordinatorLayout>
