@@ -77,7 +77,7 @@
                             android:id="@+id/desContent"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/text_content"
+                            android:text=""
                             android:textSize="18sp" />
 
                     </LinearLayout>
@@ -98,7 +98,7 @@
                             android:id="@+id/imageID"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Images"
+                            android:text="@string/images"
                             android:textSize="20sp" />
 
                         <FrameLayout
@@ -123,7 +123,6 @@
                             android:background="#808080"
                             android:layout_height="match_parent"
                             android:layout_gravity="top|left"
-
                             android:layout_weight="1"
                             android:src="@drawable/loading_placeholder" />
 
@@ -153,14 +152,14 @@
                             android:id="@+id/histoId"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Historique"
+                            android:text="@string/historique"
                             android:textSize="20sp" />
 
                         <TextView
                             android:id="@+id/histoContent"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/text_content"
+                            android:text=""
                             android:textSize="18sp" />
 
                     </LinearLayout>
@@ -181,14 +180,14 @@
                             android:id="@+id/specialiteId"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="specialite"
+                            android:text="@string/sp"
                             android:textSize="20sp" />
 
                         <TextView
                             android:id="@+id/specialiteContent"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/text_content"
+                            android:text=""
                             android:textSize="18sp" />
 
                     </LinearLayout>
@@ -211,7 +210,7 @@
                             android:id="@+id/googlemaps"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Maps"
+                            android:text="@string/maps"
                             android:textSize="20sp" />
 <!--fragment                   layout map kk-->
 
@@ -220,13 +219,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:gravity="right" >
+                            android:gravity="right"
+                            android:layout_marginBottom="5dp">
 
                             <TextView
                                 android:id="@+id/viewmap"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="VIEW"
+                                android:text="@string/view"
                                 android:textColor="#ffc125"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
@@ -236,7 +236,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
-                                android:text="NAVIGATE"
+                                android:text="@string/NAVIGATE"
                                 android:textColor="#ffc125"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />

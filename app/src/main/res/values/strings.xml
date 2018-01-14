@@ -1,14 +1,12 @@
 <resources>
     <string name="app_name">Regions</string>
-    <string name="recent_news">
-        Morbi posuere
-    </string>
-    <string name="in_news">  tristique consectetur, lacus ligula dignissim turpis, cursus commodo turpis
-        libero in purus. Phasellus te. </string>
-    <string name="publish_date">wtf</string>
-    <string name="text_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur diam id aliquam scelerisque. Donec ultrices lacus vel </string>
-
+    <string name="sp">Spécialité</string>
     <string name="user_name">region</string>
     <string name="title_activity_maps">Map</string>
-
+    <string name="description">Description</string>
+    <string name="historique">Historique</string>
+    <string name="images">Images</string>
+    <string name="maps">Maps</string>
+    <string name="view">VOIR</string>
+    <string name="NAVIGATE">NAVIGUER</string>
 </resources>
