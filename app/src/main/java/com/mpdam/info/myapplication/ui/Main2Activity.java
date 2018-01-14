@@ -47,13 +47,14 @@ public class Main2Activity extends AppCompatActivity implements OnMapReadyCallba
    // public   static String IMGS[];
    private GoogleMap mMap;
     String url = "http://anproip.co.nf/";
-    TextView viewmap ;
+    TextView viewmap,NavigateMap ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         tx=(TextView)findViewById(R.id.descId);
         viewmap=(TextView)findViewById(R.id.viewmap);
+        NavigateMap=(TextView)findViewById(R.id.navigatemap);
         img=(ImageView)findViewById(R.id.profile_id);
         Bundle extras = getIntent().getExtras();
         String value=extras.getString("a");
@@ -80,6 +81,7 @@ public class Main2Activity extends AppCompatActivity implements OnMapReadyCallba
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         collapsingToolbarLayout.setTitle(value);
         img.setImageResource(image_ids[x]);
+        Currentregion=value;
         getRetrofitObject();
         //   dynamicToolbarColor();
        // toolbarTextAppernce();
@@ -90,11 +92,19 @@ public class Main2Activity extends AppCompatActivity implements OnMapReadyCallba
             @Override
             public void onClick(View v) {
                // Uri gmmIntentUri = Uri.parse("geo:37.7749,-122.4194");36.733,9.183
+                Intent i=new Intent(getApplicationContext() ,MapsActivity.class);
+                i.putExtra("a",Currentregion);
+                startActivity(i);
+
+            }
+        });
+        NavigateMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 Uri gmmIntentUri = Uri.parse("http://maps.google.com/maps?saddr=&daddr=36.733,9.183");
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 mapIntent.setPackage("com.google.android.apps.maps");
                 startActivity(mapIntent);
-
             }
         });
     }
@@ -190,9 +200,10 @@ public class Main2Activity extends AppCompatActivity implements OnMapReadyCallba
 
         // Add a marker in Sydney, Australia, and move the camera.
         LatLng sydney = new LatLng( 36.733,9.183);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        mMap.addMarker(new MarkerOptions().position(sydney).title(Currentregion));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
        // mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(7));
     }
+
 }

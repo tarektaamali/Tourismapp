@@ -57,7 +57,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> implem
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(context,viewHolder.title.getText(),Toast.LENGTH_SHORT).show();
+        //        Toast.makeText(context,viewHolder.title.getText(),Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(v.getContext(), Main2Activity.class);
 
                 intent.putExtra("a",viewHolder.title.getText());
