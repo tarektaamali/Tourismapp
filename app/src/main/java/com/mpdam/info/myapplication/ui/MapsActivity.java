@@ -29,6 +29,9 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.mpdam.info.myapplication.R;
 
+import static com.mpdam.info.myapplication.ui.Main2Activity.res1;
+import static com.mpdam.info.myapplication.ui.Main2Activity.res;
+
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
@@ -39,7 +42,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         setContentView(R.layout.activity_maps);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarmap);
         setSupportActionBar(toolbar);
-
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.mapfin);
         Bundle extras = getIntent().getExtras();
@@ -55,7 +57,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap = googleMap;
 
         // Add a marker in Sydney, Australia, and move the camera.
-        LatLng sydney = new LatLng( 36.733,9.183);
+        LatLng sydney = new LatLng( res ,res1);
         mMap.addMarker(new MarkerOptions().position(sydney).title(value));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));

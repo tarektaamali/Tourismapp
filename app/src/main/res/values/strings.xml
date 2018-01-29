@@ -1,12 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Regions</string>
-    <string name="sp">Spécialité</string>
-    <string name="user_name">region</string>
-    <string name="title_activity_maps">Map</string>
-    <string name="description">Description</string>
-    <string name="historique">Historique</string>
-    <string name="images">Images</string>
-    <string name="maps">Maps</string>
-    <string name="view">VOIR</string>
-    <string name="NAVIGATE">NAVIGUER</string>
+
+        <string name="app_name">Tounsna Elbaya</string>
+        <string name="sp">Spécialité</string>
+        <string name="user_name">region</string>
+        <string name="title_activity_maps">Map</string>
+        <string name="description">Description</string>
+        <string name="historique">Historique</string>
+        <string name="images">Images</string>
+        <string name="maps">Maps</string>
+        <string name="view">VOIR</string>
+        <string name="welcome">Bienvenue</string>
+        <string name="discover">Decouvrir notre Tunisie</string>
+        <string name="NAVIGATE">NAVIGUER</string>
+        <string name="string_internet_connection_not_available">Connexion Internet non disponible</string>
+        <string name="title_activity_main3">Main3Activity</string>
+
 </resources>

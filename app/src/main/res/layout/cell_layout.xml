@@ -1,22 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="#FFFFFF"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="180dp"
     android:layout_margin="3dp"
+    android:layout_marginTop="5dp"
+    android:id="@+id/img"
     >
-    <ImageView
+    <LinearLayout
+
+        android:background="@drawable/ripple_effect"
+        android:id="@+id/lin"
+    android:layout_height="180dp"
+    android:layout_width="match_parent"
+    android:gravity="bottom" android:focusable="true">
+
+ <!--   <ImageView
         android:id="@+id/img"
         android:adjustViewBounds="true"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        />
+        />-->
     <TextView
         android:id="@+id/title"
-        android:layout_gravity="center"
-        android:textColor="#000"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_gravity="bottom|center_horizontal"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:textStyle="normal|bold|italic"
+        android:background="#69000000"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        />
+</LinearLayout>
 </LinearLayout>

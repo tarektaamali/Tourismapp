@@ -43,7 +43,7 @@ public class RecyclerViewFragment extends Fragment implements GalleryItemClickLi
         super.onViewCreated(view, savedInstanceState);
         GalleryAdapter galleryAdapter = new GalleryAdapter(Utils.getData(),this);
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setAdapter(galleryAdapter);
     }

@@ -64,17 +64,93 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:padding="12dp">
+                        android:padding="15dp">
 
                         <TextView
                             android:id="@+id/descId"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Lorem ipsum"
+                            android:text="@string/description"
                             android:textSize="20sp" />
+                        <View
+                            android:id="@+id/Spm"
+                            android:layout_width="match_parent"
+                            android:layout_height= "0.5dp"
+
+                            android:layout_margin="5dp"
+                            android:background="#808080" />
+                        <TextView
+                            android:paddingTop="5dp"
+                            android:id="@+id/desContent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
 
                         <TextView
-                            android:id="@+id/desContent"
+                            android:id="@+id/histoId"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/historique"
+                            android:textSize="20sp" />
+                        <View
+                            android:id="@+id/Spm1"
+                            android:layout_width="match_parent"
+                            android:layout_height= "0.5dp"
+
+                            android:layout_margin="5dp"
+                            android:background="#808080" />
+                        <TextView
+                            android:id="@+id/histoContent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:id="@+id/specialiteId"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sp"
+                            android:textSize="20sp" />
+                        <View
+                            android:id="@+id/Spm3"
+                            android:layout_width="match_parent"
+                            android:layout_height= "0.5dp"
+                            android:layout_margin="8dp"
+                            android:background="#808080" />
+                        <TextView
+                            android:id="@+id/specialiteContent"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text=""
@@ -107,26 +183,23 @@
                             android:layout_height="100dp"
                             android:orientation="horizontal">
 
-                        <ImageView
-                            android:id="@+id/imageView5"
-                            android:layout_width="0dp"
-                            android:background="#808080"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_gravity="top|right"
-                            android:src="@drawable/loading_placeholder"
-                            />
+                            <ImageView
+                                android:id="@+id/imageView5"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="top|right"
+                                android:layout_weight="1"
+                                android:background="#808080"
+                                android:src="@drawable/loading_placeholder" />
 
-                        <ImageView
-                            android:id="@+id/imageView3"
-                            android:layout_width="0dp"
-                            android:background="#808080"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="top|left"
-                            android:layout_weight="1"
-                            android:src="@drawable/loading_placeholder" />
-
-
+                            <ImageView
+                                android:id="@+id/imageView3"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="top|left"
+                                android:layout_weight="1"
+                                android:background="#808080"
+                                android:src="@drawable/loading_placeholder" />
 
 
                         </FrameLayout>
@@ -136,7 +209,7 @@
 
 
                 </android.support.v7.widget.CardView>
-
+                <!--       <include layout="@layout/card_layout" />-->
                 <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -145,64 +218,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="12dp">
-
-                        <TextView
-                            android:id="@+id/histoId"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/historique"
-                            android:textSize="20sp" />
-
-                        <TextView
-                            android:id="@+id/histoContent"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text=""
-                            android:textSize="18sp" />
-
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="12dp">
-
-                        <TextView
-                            android:id="@+id/specialiteId"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/sp"
-                            android:textSize="20sp" />
-
-                        <TextView
-                            android:id="@+id/specialiteContent"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text=""
-                            android:textSize="18sp" />
-
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
-
-
-         <!--       <include layout="@layout/card_layout" />-->
-                <android.support.v7.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
                         android:orientation="vertical"
                         android:padding="12dp">
 
@@ -212,30 +228,44 @@
                             android:layout_height="wrap_content"
                             android:text="@string/maps"
                             android:textSize="20sp" />
-<!--fragment                   layout map kk-->
+                        <View
+                            android:id="@+id/SplitLine_hor1"
+                            android:layout_width="match_parent"
+                            android:layout_height= "0.5dp"
+                            android:layout_marginBottom="3dp"
+                            android:background="#808080" />
+                        <!--fragment                   layout map kk-->
 
-                     <include layout="@layout/layoutmapsinclu"/>
+                        <include layout="@layout/layoutmapsinclu" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginTop="5dp"
                             android:gravity="right"
-                            android:layout_marginBottom="5dp">
+                            android:orientation="horizontal">
 
-                            <TextView
+                            <Button
                                 android:id="@+id/viewmap"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/ripple_effect"
                                 android:text="@string/view"
                                 android:textColor="#ffc125"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
 
-                            <TextView
+                            <Button
                                 android:id="@+id/navigatemap"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/ripple_effect"
                                 android:text="@string/NAVIGATE"
                                 android:textColor="#ffc125"
                                 android:textSize="15sp"
